@@ -7,9 +7,9 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "../frontend"))); // Aqui está a mudança!
+app.use(express.static(path.join(__dirname, "../frontend"))); 
 
-// Rotas da API
+
 app.get("/api/tasks", (req, res) => {
     db.all("SELECT * FROM tasks", [], (err, rows) => {
         if (err) return res.status(500).json({ error: err.message });

@@ -1,115 +1,150 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;   
 }
-.container{
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(135deg , #6A5ACD, #87CEEB);
-    padding: 10px;
+
+body {
+    background: linear-gradient(135deg, #6A5ACD, #87CEEB);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.todo-app{
+
+.container {
     width: 100%;
     max-width: 540px;
-    background: #fff;
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
+    padding: 20px;
 }
-.todo-app h2{
-    color: #002765;
+
+.todo-app {
+    background: #ffffff;
+    padding: 40px 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.todo-app h2 {
     display: flex;
     align-items: center;
+    color: #002765;
+    font-weight: 600;
+    font-size: 24px;
     margin-bottom: 20px;
 }
-.todo-app h2 img{
-    width: 30px;
+
+.todo-app h2 img {
+    width: 28px;
     margin-left: 10px;
-} 
-.row{
+}
+
+.row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background: #edeef0;
+    background: #f1f1f1;
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
 }
-input{
+
+.row input {
     flex: 1;
     border: none;
-    outline:none;
-    background: transparent;
-    padding: 10px;
-    font-weight: 14px;
-}
-button{
-    border: none;
     outline: none;
-    padding: 16px 50px;
-    background: cadetblue;
+    background: transparent;
+    padding: 14px;
+    font-size: 16px;
+}
+
+.row button {
+    border: none;
+    padding: 14px 40px;
+    background: #4682B4;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 40px;
+    border-radius: 30px;
+    transition: background 0.3s ease;
 }
-ul li{
+
+.row button:hover {
+    background: #4169E1;
+}
+
+ul li {
+    position: relative;
     list-style: none;
     font-size: 17px;
     padding: 12px 8px 12px 50px;
     user-select: none;
-    cursor: pointer;
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-ul li::before{
-    content: '';
-    position: absolute;
-    height: 28px;
+
+.check-circle {
     width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background-image: url(imagens/unchecked.png);
+    background-image: url("imagens/unchecked.png");
     background-size: cover;
     background-position: center;
-    top: 12px;
-    left: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
 }
-ul li.checked{
+
+li.checked .check-circle {
+    background-image: url("imagens/checked.png");
+}
+
+.task-text {
+    flex: 1;
+    word-break: break-word;
+}
+
+li.checked .task-text {
     color: #555;
     text-decoration: line-through;
 }
-ul li.checked::before{
-    background-image: url(imagens/checked.png);
-}
-ul li .delete-btn {
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-    cursor: pointer;
-}
 
-ul li .delete-btn:hover {
-    background: #edeef0;
-}
-ul li .edit-btn {
-    position: absolute;
-    right: 40px; 
-    top: 5px;
-    height: 20px;
-    font-size: 14px;
-    border: none;
+.edit-btn {
     background: cadetblue;
-    color: #fff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
     cursor: pointer;
-    font-family: 'Poppins', sans-serif;  
+    font-size: 14px;
 }
 
+.edit-btn:hover {
+    background: #3e8e8e;
+}
 
+.delete-btn {
+    font-size: 20px;
+    color: #333;
+    margin-left: 10px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+/* Delete button */
+.delete-btn {
+    color: #888;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.delete-btn:hover {
+    background: #eee;
+}

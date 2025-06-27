@@ -1,7 +1,6 @@
 const sqlite3 = require("sqlite3").verbose(); // importa SQLite
 const db = new sqlite3.Database("./todo.db"); // cria/abre o ficheiro da BD
 
-// Criação da tabela "tasks" (se não existir)
 db.serialize(() => {
     db.run(`
         CREATE TABLE IF NOT EXISTS tasks (
